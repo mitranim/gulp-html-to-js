@@ -1,0 +1,20 @@
+{
+  "name": "gulp-html-to-js",
+  "version": "0.0.1",
+  "description": "Gulp plugin for converting html templates to JavaScript modules",
+  "main": "lib/index.js",
+  "author": "Mitranim",
+  "license": "MIT",
+  "keywords": [
+    "gulp",
+    "plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mitranim/gulp-html-to-js.git"
+  },
+  "dependencies": {
+    "through2": "^0.6.5",
+    "vinyl": "^0.4.6"
+  }
+}
