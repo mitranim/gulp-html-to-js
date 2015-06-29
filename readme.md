@@ -8,7 +8,7 @@ JavaScript modules, ready to be imported with your favourite module loader.
 In a shell:
 
 ```shell
-npm i --save-dev gulp-statil
+npm i --save-dev gulp-html-to-js
 ```
 
 In your `gulpfile.js`:
