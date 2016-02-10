@@ -1,9 +1,14 @@
 {
   "name": "gulp-html-to-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Gulp plugin for converting html templates to JavaScript modules",
   "main": "lib/index.js",
-  "author": "Mitranim",
+  "scripts": {
+    "start": "node test/test && node watch",
+    "test": "node test/test",
+    "prepublish": "node test/test"
+  },
+  "author": "Mitranim <me@mitranim.com>",
   "license": "MIT",
   "keywords": [
     "gulp",
@@ -16,5 +21,8 @@
   "dependencies": {
     "through2": "^0.6.5",
     "vinyl": "^0.4.6"
+  },
+  "devDependencies": {
+    "lodash": "^4.3.0"
   }
 }

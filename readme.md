@@ -1,7 +1,10 @@
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com)
+
 ## Description
 
-This is a [`gulp`](http://gulpjs.com) plugin that converts HTML files into
-JavaScript modules, ready to be imported with your favourite module loader.
+This is a [`gulp`](http://gulpjs.com) plugin that converts HTML files, or any
+other text files, into JavaScript modules, ready to be imported with your
+favourite module loader.
 
 ## Installation and Usage
 
@@ -39,7 +42,7 @@ Without the `concat` option, each module exports the template as a string:
 ```
 
 ```javascript
-'format cjs';
+'use strict';
 module.exports = '<p>Hello world!</p>';
 ```
 
@@ -47,7 +50,7 @@ With `concat`, files are grouped into one module, where templates are keyed
 by file paths:
 
 ```javascript
-'format cjs';
+'use strict';
 module.exports = Object.create(null);
 module.exports['index.html'] = '<p>Hello world!</p>';
 ```
