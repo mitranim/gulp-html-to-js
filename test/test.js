@@ -49,15 +49,16 @@ if (!_.isEqual(contents, [
 stream = plugin({concat: 'view.js'})
 
 for (const file of files()) {
-  stream._transform(file, null, err => {
-    if (err) throw err
-  })
+  stream._transform(file, null, onerror)
 }
 
-stream._flush((err, value) => {
-  if (err) throw err
-  result = value
-})
+stream._flush(onerror)
+
+const buffer = stream._readableState.buffer
+
+if (buffer.length !== 1) throw Error()
+
+result = buffer[0]
 
 if (!result) throw Error()
 
@@ -109,8 +110,12 @@ function merge () {
 }
 
 /**
- * Done
+ * Misc
  */
+
+function onerror (err) {
+  if (err) throw err
+}
 
 console.log(`[${pad(new Date().getHours())}:${pad(new Date().getMinutes())}:${pad(new Date().getSeconds())}] Finished test without errors.`)
 
