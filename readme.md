@@ -61,12 +61,11 @@ In your app, import the result like so:
 import views from 'views';
 ```
 
-## Other options
+## Options
 
-When using the `concat` option, there are other options that can be used to
-modify its behavior:
+See the `concat` option above. You can also modify it with:
 
-* prefix: Prepends a path prefix to all keys of the resulting module object.
+* `prefix`: Prepends a path prefix to all keys of the resulting module object.
 
 For `{prefix: 'templates'}` the resulting file from the above example is:
 
@@ -76,7 +75,7 @@ module.exports = Object.create(null);
 module.exports['templates/index.html'] = '<p>Hello world!</p>';
 ```
 
-* global: Assigns the resulting object to a global variable other than
+* `global`: Assigns the resulting object to a global variable other than
   `module.exports`. This allows for compatibility with other systems or for
   client-side template caching.
 
