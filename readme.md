@@ -75,11 +75,11 @@ module.exports = Object.create(null);
 module.exports['templates/index.html'] = '<p>Hello world!</p>';
 ```
 
-* `global`: Assigns the resulting object to a global variable other than
+* `global`: Requires `concat`. Assigns the resulting object to a global variable other than
   `module.exports`. This allows for compatibility with other systems or for
   client-side template caching.
 
-For `{global: 'window.templates'}` the resulting file from the above example is:
+For `{global: 'window.templates', concat: 'templates.js'}` the resulting file from the above example is:
 
 ```javascript
 'use strict';
