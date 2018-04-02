@@ -58,7 +58,7 @@ buffer = stream._readableState.buffer
 
 if (buffer.length !== 1) throw Error()
 
-result = buffer[0]
+result = stream.read()
 
 if (!result) throw Error()
 
@@ -85,7 +85,7 @@ buffer = stream._readableState.buffer
 
 if (buffer.length !== 1) throw Error()
 
-result = buffer[0]
+result = stream.read()
 
 if (!result) throw Error()
 
@@ -112,7 +112,7 @@ buffer = stream._readableState.buffer
 
 if (buffer.length !== 1) throw Error()
 
-result = buffer[0]
+result = stream.read()
 
 if (!result) throw Error()
 
