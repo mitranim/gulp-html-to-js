@@ -8,12 +8,11 @@
     "test": "node test/test",
     "prepublishOnly": "node test/test"
   },
-  "author": "Mitranim <me@mitranim.com>",
-  "license": "MIT",
   "keywords": [
     "gulp",
     "plugin"
   ],
+  "license": "WTFPL",
   "repository": {
     "type": "git",
     "url": "https://github.com/Mitranim/gulp-html-to-js.git"
