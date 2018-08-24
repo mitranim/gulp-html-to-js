@@ -1,21 +1,20 @@
 'use strict'
 
 const fs = require('fs')
-const exec = require('child_process').exec
-const testCommand = require('./package').scripts.test
+const cp = require('child_process')
 
-const codes = {
-  blue: '\x1b[34m',
-  red: '\x1b[31m',
-  reset: '\x1b[0m'
+let proc
+
+function test() {
+  if (proc) proc.kill()
+  proc = cp.fork('./test.js')
+  proc.once('exit', onDone)
 }
 
-function test () {
-  exec(testCommand, (err, stdout) => {
-    process.stdout.write(stdout)
-    if (err) process.stderr.write(codes.red + err.toString() + codes.reset)
-  })
+function onDone(code) {
+  if (code) console.error(`Test failed with exit code ${code}`)
+  else console.info(`Test finished successfully`)
 }
 
-fs.watch('lib', test)
-fs.watch('test', test)
+fs.watch('gulp-html-to-js.js', test)
+fs.watch('test.js', test)

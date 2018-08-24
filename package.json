@@ -1,26 +1,26 @@
 {
   "name": "gulp-html-to-js",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Gulp plugin for converting strings to JavaScript modules",
-  "main": "lib/index.js",
+  "main": "gulp-html-to-js.js",
   "scripts": {
-    "start": "node test/test && node watch",
-    "test": "node test/test",
-    "prepublishOnly": "node test/test"
+    "start": "node test.js && node watch.js",
+    "test": "node test.js",
+    "prepublishOnly": "node test.js"
   },
   "keywords": [
     "gulp",
     "plugin"
   ],
-  "license": "WTFPL",
   "repository": {
     "type": "git",
     "url": "https://github.com/Mitranim/gulp-html-to-js.git"
   },
-  "dependencies": {
-    "vinyl": "^2.1.0"
+  "license": "WTFPL",
+  "peerDependencies": {
+    "vinyl": "*"
   },
   "devDependencies": {
-    "lodash": "^4.3.0"
+    "vinyl": "2.2.0"
   }
 }
